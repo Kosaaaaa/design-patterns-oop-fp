@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import random
 from abc import ABC, abstractmethod
+from typing import override
 
 
 class SortStrategy(ABC):
@@ -11,6 +12,7 @@ class SortStrategy(ABC):
 
 
 class BubbleSortStrategy(SortStrategy):
+    @override
     def sort(self, data: list[int]) -> list[int]:
         data = data.copy()
         n = len(data)

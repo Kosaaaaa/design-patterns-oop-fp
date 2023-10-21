@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
+from typing import override
 
 
 class Observer(ABC):
@@ -14,6 +15,7 @@ class Observer(ABC):
 class ConcreteObserver(Observer):
     name: str
 
+    @override
     def update(self, value: str) -> None:
         print(f"{self.name} received {value}")
 

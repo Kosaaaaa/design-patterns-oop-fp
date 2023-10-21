@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from typing import override
 
 
 class Template(ABC):
@@ -42,23 +43,29 @@ class Template(ABC):
 
 
 class ConcreteClass1(Template):
+    @override
     def required_operations1(self) -> None:
         print("ConcreteClass1 says: Required operation1")
 
+    @override
     def required_operations2(self) -> None:
         print("ConcreteClass1 says: Required operation2")
 
+    @override
     def hook2(self) -> None:
         print("ConcreteClass1 says: Hook2")
 
 
 class ConcreteClass2(Template):
+    @override
     def required_operations1(self) -> None:
         print("ConcreteClass2 says: Required operation1")
 
+    @override
     def required_operations2(self) -> None:
         print("ConcreteClass2 says: Required operation2")
 
+    @override
     def hook1(self) -> bool:
         print("ConcreteClass2 says: Hook1")
         return False
